@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    image: joingateocr/joingateocrmonitoring:prod20240809
+    container_name: joingateocrmonitoring-prod
+    restart: unless-stopped
+    build:
+     context: .
+     dockerfile: Dockerfile  # Replace with the actual name of your Dockerfile if it's different
+     args:
+       DEPLOY_ENV: dev
+    environment:
+      - API_URL=http://api:8080/api  # Use the service name 'api' as the hostname
+    ports:
+      - "8000:80"

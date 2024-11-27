@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    image: joingateocr:5000/joingateocrmonitoring:latest
+    container_name: joingateocrmonitoring-dev
+    build:
+      context: .
+      dockerfile: Dockerfile  # Replace with the actual name of your Dockerfile if it's different
+      args:
+        DEPLOY_ENV: development
+    ports:
+      - "1080:80"
+

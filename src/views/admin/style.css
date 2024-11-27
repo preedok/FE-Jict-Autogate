@@ -1,0 +1,13 @@
+.floating-animation {
+    animation: floating 3s infinite;
+}
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
